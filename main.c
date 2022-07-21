@@ -2,7 +2,6 @@
 #include <SDL2/SDL_image.h>
 #include <stdlib.h>
 
-
 unsigned char checkDraw(unsigned char* gameBoard);
 
 int main(int argc, char* argv[]){
@@ -76,9 +75,10 @@ int main(int argc, char* argv[]){
                 gameState = gameBoard[1 * 3 + 1];
             }
 
-            if(checkDraw(gameBoard)){
+            if(checkDraw(gameBoard) && gameState == 0){
                 gameState = 3;
             }
+
         }
 
         SDL_RenderClear(renderer);
